@@ -43,6 +43,51 @@ Change class "fixed" to "sticky" in "navbar" (l. 33) so the navbar doesn't hide 
             background: #1f2937;
             background-color: #1f2937;
         }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        /* Style table headers */
+        th {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+            background-color: #f2f2f2;
+        }
+
+        /* Style table rows */
+        tr {
+            border: 1px solid #ddd;
+        }
+
+        /* Style table cells */
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        /* Make the table responsive */
+        @media only screen and (max-width: 600px) {
+
+            /* Make table narrow for small screens */
+            table {
+                border: 0;
+            }
+
+            /* Make table cells overlap for small screens */
+            table,
+            tr,
+            td {
+                display: block;
+            }
+
+            /* Hide table headers for small screens */
+            th {
+                display: none;
+            }
+        }
     </style>
 
     <!-- Navbar start -->
@@ -195,56 +240,93 @@ Change class "fixed" to "sticky" in "navbar" (l. 33) so the navbar doesn't hide 
     <!-- Sidebar end -->
 
     <main>
-        <div class="bg-white mt-36 shadow-md rounded-lg overflow-hidden">
-            <div class="flex justify-between items-center px-6 py-4">
-              <button class="px-4 py-2 text-sm font-medium text-gray-700 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Edit Profile</button>
-              <div class="flex items-center">
-                <img class="h-16 w-16 rounded-full mr-4" src="..." alt="Profile picture">
-                <div>
-                  <h2 class="text-xl font-bold text-gray-800">Mahafuj Ahamed</h2>
-                  <p class="text-gray-600">Personal</p>
+        <div class="grid grid-cols-12 mt-36 gap-4 bg-white shadow-md rounded-lg overflow-hidden">
+            <div class="col-span-4 flex flex-col justify-between px-6 py-4 border-r border-gray-200">
+                <button
+                    class="px-4 py-2 text-sm font-medium text-gray-700 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Edit
+                    Profile</button>
+            </div>
+            <div class="col-span-8 px-6 py-4">
+                <div class="mb-4">
+                    <h2 class="text-xl font-bold text-gray-800">Personal Information</h2>
+                    <dl class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <dt class="text-sm font-medium text-gray-500">First Name</dt>
+                        <dd class="text-sm text-gray-900">Mahafuj Ahamed</dd>
+                        <dt class="text-sm font-medium text-gray-500">Last Name</dt>
+                        <dd class="text-sm text-gray-900">--</dd>
+                        <dt class="text-sm font-medium text-gray-500">Date of Birth</dt>
+                        <dd class="text-sm text-gray-900">2001-05-08</dd>
+                        <dt class="text-sm font-medium text-gray-500">Mobile</dt>
+                        <dd class="text-sm text-gray-900">01750757747</dd>
+                        <dt class="text-sm font-medium text-gray-500">Email</dt>
+                        <dd class="text-sm text-gray-900">ahmed15-5448@diu.edu.bd</dd>
+                    </dl>
                 </div>
-              </div>
+                <div class="mb-4">
+                    <h2 class="text-xl font-bold text-gray-800">Present Address</h2>
+                    <dl class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <dt class="text-sm font-medium text-gray-500">Address</dt>
+                        <dd class="text-sm text-gray-900">Changaon, Ashulia</dd>
+                        <dt class="text-sm font-medium text-gray-500">Division/State</dt>
+                        <dd class="text-sm text-gray-900">Dhaka</dd>
+                        <dt class="text-sm font-medium text-gray-500">District/City</dt>
+                        <dd class="text-sm text-gray-900">Gazipur</dd>
+                        <dt class="text-sm font-medium text-gray-500">Post Office</dt>
+                        <dd class="text-sm text-gray-900"></dd>
+                        <dt class="text-sm font-medium text-gray-500">Police Station</dt>
+                        <dd class="text-sm text-gray-900"></dd>
+                        <dt class="text-sm font-medium text-gray-500">Country</dt>
+                        <dd class="text-sm text-gray-900">Bangladesh</dd>
+                        <dt class="text-sm font-medium text-gray-500">Zip Code</dt>
+                        <dd class="text-sm text-gray-900"></dd>
+                    </dl>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold text-gray-800">Permanent Address</h2>
+                    <dl class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <dt class="text-sm font-medium text-gray-500">Address</dt>
+                        <dd class="text-sm text-gray-900">Sylhet City</dd>
+                        <dt class="text-sm font-medium text-gray-500">Division/State</dt>
+                        <dd class="text-sm text-gray-900">Sylhet</dd>
+                        <dt class="text-sm font-medium text-gray-500">District/City</dt>
+                        <dd class="text-sm text-gray-900">Sylhet</dd>
+                        <dt class="text-sm font-medium text-gray-500">Post Office</dt>
+                        <dd class="text-sm text-gray-900"></dd>
+                        <dt class="text-sm font-medium text-gray-500">Police Station</dt>
+                        <dd class="text-sm text-gray-900"></dd>
+                        <dt class="text-sm font-medium text-gray-500">Country</dt>
+                        <dd class="text-sm text-gray-900">Bangladesh</dd>
+                        <dt class="text-sm font-medium text-gray-500">Zip Code</dt>
+                        <dd class="text-sm text-gray-900"></dd>
+                    </dl>
+                </div>
             </div>
-            <div class="px-6 py-4 border-t border-gray-200">
-              <dl class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <dt class="text-sm font-medium text-gray-500">First Name</dt>
-                <dd class="text-sm text-gray-900">Mahafuj Ahamed</dd>
-                <dt class="text-sm font-medium text-gray-500">Middle Name</dt>
-                <dd class="text-sm text-gray-900">-</dd>
-                <dt class="text-sm font-medium text-gray-500">Last Name</dt>
-                <dd class="text-sm text-gray-900">-</dd>
-                <dt class="text-sm font-medium text-gray-500">Nick Name</dt>
-                <dd class="text-sm text-gray-900">-</dd>
-                <dt class="text-sm font-medium text-gray-500">Date of Birth</dt>
-                <dd class="text-sm text-gray-900">2001-05-08</dd>
-                <dt class="text-sm font-medium text-gray-500">Place of Birth</dt>
-                <dd class="text-sm text-gray-900">-</dd>
-                <dt class="text-sm font-medium text-gray-500">Gender</dt>
-                <dd class="text-sm text-gray-900">Male</dd>
-                <dt class="text-sm font-medium text-gray-500">Marital Status</dt>
-                <dd class="text-sm text-gray-900">Single</dd>
-                <dt class="text-sm font-medium text-gray-500">Blood Group</dt>
-                <dd class="text-sm text-gray-900">AB+</dd>
-                <dt class="text-sm font-medium text-gray-500">Religion</dt>
-                <dd class="text-sm text-gray-900">Islam</dd>
-                <dt class="text-sm font-medium text-gray-500">Nationality</dt>
-                <dd class="text-sm text-gray-900">Bangladeshi</dd>
-                <dt class="text-sm font-medium text-gray-500">National ID</dt>
-                <dd class="text-sm text-gray-900">1508415542</dd>
-                <dt class="text-sm font-medium text-gray-500">Mobile</dt>
-                <dd class="text-sm text-gray-900">01750757747</dd>
-                <dt class="text-sm font-medium text-gray-500">Present Mobile</dt>
-                <dd class="text-sm text-gray-900">-</dd>
-                <dt class="text-sm font-medium text-gray-500">Permanent Mobile</dt>
-                <dd class="text-sm text-gray-900">-</dd>
-                <dt class="text-sm font-medium text-gray-500">Email</dt>
-                <dd class="text-sm text-gray-900">ahmed15-5448@diu.edu.bd</dd>
-                <dt class="text-sm font-medium text-gray-500">Website</dt>
-                <dd class="text-sm text-gray-900">-</dd>
-              </dl>
-            </div>
-          </div>
+        </div>
+        <div>
+            <h2>Education and Training</h2>
+            <table>
+                <tr>
+                    <th>Degree</th>
+                    <th>Degree Name</th>
+                    <th>Institute</th>
+                    <th>University/Board</th>
+                    <th>Passing Year</th>
+                    <th>Grade/Class/Devision</th>
+                    <th>Marks/CGPA</th>
+                    <th>Remarks</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
     </main>
 
     <!-- footer -->
