@@ -1,11 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/riva-dashboard-tailwind/riva-dashboard.css"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
     <title>Document</title>
+
 </head>
+
 <body>
-    
+    <!-- Drawer -->
+    <!-- component -->
+    <!--
+Change class "fixed" to "sticky" in "navbar" (l. 33) so the navbar doesn't hide any of your page content!
+-->
+
+    <style>
+        ul.breadcrumb li+li::before {
+            content: "\276F";
+            padding-left: 8px;
+            padding-right: 4px;
+            color: inherit;
+        }
+
+        ul.breadcrumb li span {
+            opacity: 60%;
+        }
+
+        #sidebar {
+            -webkit-transition: all 300ms cubic-bezier(0, 0.77, 0.58, 1);
+            transition: all 300ms cubic-bezier(0, 0.77, 0.58, 1);
+        }
+
+        #sidebar.show {
+            transform: translateX(0);
+        }
+
+        #sidebar ul li a.active {
+            background: #1f2937;
+            background-color: #1f2937;
+        }
+    </style>
+
+    <!-- Navbar start -->
+    <nav id="navbar" class="fixed top-0 z-40 flex w-full flex-row justify-end bg-gray-700 px-4 sm:justify-between">
+        <button id="btnSidebarToggler" type="button" class="py-4 text-2xl text-white hover:text-gray-200">
+            <svg id="navClosed" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="h-8 w-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            <svg id="navOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="hidden h-8 w-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <ul class="breadcrumb hidden flex-row items-center py-4 text-lg text-white sm:flex">
+            <h2>MD. MAHFUJUR RAHMAN (221-15-6018)</h2>
+            <h2 class="ms-4">Logout</h2>
+        </ul>
+
+    </nav>
+    <!-- Navbar end -->
+
+    <!-- Sidebar start-->
+    <div id="containerSidebar" class="z-40">
+        <div class="navbar-menu relative z-40">
+            <nav id="sidebar"
+                class="fixed left-0 bottom-0 flex w-3/4 -translate-x-full flex-col overflow-y-auto bg-gray-700 pt-6 pb-8 sm:max-w-xs lg:w-80">
+                <!-- one category / navigation group -->
+                <div class="px-4 pb-6">
+                    <ul class="mb-8 text-sm font-medium">
+                        <li>
+                            <a class="active flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                                href="Dashboard.html">
+                                <span class="select-none">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                                href="Profile.html">
+                                <span class="select-none">Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600" href="">
+                                <span class="select-none">Profile Update</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                                href="#link1">
+                                <span class="select-none">Password Change</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                                href="#link1">
+                                <span class="select-none">Payment Ledger</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                                href="#link1">
+                                <span class="select-none">Payment Scheme</span>
+                            </a>
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                                href="#link1">
+                                <span class="select-none">Registration/Exam Clearance</span>
+                            </a>
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                                href="#link1">
+                                <span class="select-none">Registered Course</span>
+                            </a>
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                                href="#link1">
+                                <span class="select-none">Drop Semester</span>
+                            </a>
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                                href="#link1">
+                                <span class="select-none">Live Result</span>
+                            </a>
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                                href="#link1">
+                                <span class="select-none">Teaching Evaluation</span>
+                            </a>
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                                href="#link1">
+                                <span class="select-none">Alumni Professional</span>
+                            </a>
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                                href="#link1">
+                                <span class="select-none">Convocation Apply</span>
+                            </a>
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                                href="#link1">
+                                <span class="select-none">Certificate & transcript Apply</span>
+                            </a>
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                                href="#link1">
+                                <span class="select-none">Online Exam</span>
+                            </a>
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                                href="#link1">
+                                <span class="select-none">Laptop</span>
+                            </a>
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                                href="#link1">
+                                <span class="select-none">Routine</span>
+                            </a>
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                                href="#link1">
+                                <span class="select-none">Mentor Meeting</span>
+                            </a>
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                                href="#link1">
+                                <span class="select-none">Result</span>
+                            </a>
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                                href="#link1">
+                                <span class="select-none">Notices</span>
+                            </a>
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                                href="#link1">
+                                <span class="select-none">Digital Certificate</span>
+                            </a>
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                                href="#link1">
+                                <span class="select-none">Transport Card Apply</span>
+                            </a>
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                                href="#link1">
+                                <span class="select-none">Student Application</span>
+                            </a>
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                                href="#link1">
+                                <span class="select-none">Alumni Card Apply</span>
+                            </a>
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                                href="#link1">
+                                <span class="select-none">Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- example copies end -->
+            </nav>
+        </div>
+        <div class="mx-auto lg:ml-80"></div>
+    </div>
+    <!-- Sidebar end -->
+
+    <main>
+        <div class="container mx-auto p-4 grid grid-cols-1 md:grid-cols-2 mt-36 lg:grid-cols-4 gap-4">
+            <div class="bg-gray-200 rounded-lg shadow-md p-4 flex flex-col justify-between">
+                <div class="text-xl font-bold">Total Payable</div>
+                <div class="text-2xl font-semibold text-gray-700">৳518,250.00</div>
+            </div>
+            <div class="bg-gray-200 rounded-lg shadow-md p-4 flex flex-col justify-between">
+                <div class="text-xl font-bold">Total Paid</div>
+                <div class="text-2xl font-semibold text-gray-700">৳515,201.00</div>
+            </div>
+            <div class="bg-gray-200 rounded-lg shadow-md p-4 flex flex-col justify-between">
+                <div class="text-xl font-bold">Total Due</div>
+                <div class="text-2xl font-semibold text-gray-700">৳3,049.00</div>
+            </div>
+            <div class="bg-gray-200 rounded-lg shadow-md p-4 flex flex-col justify-between">
+                <div class="text-xl font-bold">Total Others</div>
+                <div class="text-2xl font-semibold text-gray-700">৳3,400.00</div>
+            </div>
+        </div>
+        <!-- hignchart -->
+        <div class="container mx-auto px-4 pb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-gray-100 rounded-lg shadow-md p-6">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-xl font-bold text-gray-700">Payment Scheme</h2>
+                        <div class="text-gray-400">Daffodil International University</div>
+                    </div>
+                    <div class="mt-4 border-t border-dashed pt-4">
+                        <div class="flex justify-between items-center py-2">
+                            <div class="text-gray-700">Fee Name</div>
+                            <div class="text-gray-700 text-right">Scheme (Taka)</div>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-dashed">
+                            <div class="text-gray-900 font-medium">Admission Fee</div>
+                            <div class="text-gray-900 text-right">15000.00</div>
+                        </div>
+                        <div class="flex justify-between items-center py-2">
+                            <div class="text-gray-700">Campus Development Fee</div>
+                            <div class="text-gray-700 text-right">6750.00</div>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-dashed">
+                            <div class="text-gray-700">Extra Curriculam Fee</div>
+                            <div class="text-gray-700 text-right">3000.00</div>
+                        </div>
+                        <div class="flex justify-between items-center py-2">
+                            <div class="text-gray-700">Lab Fee</div>
+                            <div class="text-gray-700 text-right">3000.00</div>
+                        </div>
+                        <div class="flex justify-between items-center py-2">
+                            <div class="text-gray-700">Library Fee</div>
+                            <div class="text-gray-700 text-right">1000.00</div>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-dashed">
+                            <div class="text-gray-700">Rover Scout & BNCC Fee</div>
+                            <div class="text-gray-700 text-right">4900.00</div>
+                        </div>
+                        <div class="flex justify-between items-center py-2">
+                            <div class="text-gray-700">Semester Fee</div>
+                            <div class="text-gray-700 text-right">5000.00</div>
+                        </div>
+                        <div class="flex justify-between items-center py-2">
+                            <div class="text-gray-700">Student Life Insurance</div>
+                            <div class="text-gray-700 text-right">5000.00</div>
+                        </div>
+                        <div class="flex justify-between items-center py-2">
+                            <div class="text-gray-700">Smart Card</div>
+                            <div class="text-gray-700 text-right">4967.00</div>
+                        </div>
+                        <div class="flex justify-between items-center py-2">
+                            <div class="text-gray-700">Tuition Fee</div>
+                        </div>
+                        <div
+                            class="flex justify-between items-center py-2 border-t border-dashed pt-4 font-bold text-gray-900">
+                            <div>Total</div>
+                            <div class="text-right">-------</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container mx-auto px-4 pb-8">
+                    <div id="chartContainer" style="width: 100%; height: 400px;"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <div class="text-2xl text-center bg-gray-600 font-sans h-20 pt-6 text-white mt-4">
+            All Rights Reserved @ Daffodil International University
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", () => {
+            const navbar = document.getElementById("navbar");
+            const sidebar = document.getElementById("sidebar");
+            const btnSidebarToggler = document.getElementById("btnSidebarToggler");
+            const navClosed = document.getElementById("navClosed");
+            const navOpen = document.getElementById("navOpen");
+
+            btnSidebarToggler.addEventListener("click", (e) => {
+                e.preventDefault();
+                sidebar.classList.toggle("show");
+                navClosed.classList.toggle("hidden");
+                navOpen.classList.toggle("hidden");
+            });
+
+            sidebar.style.top = parseInt(navbar.clientHeight) - 1 + "px";
+        });
+
+        // Include Highcharts library and your Highcharts configuration code here:
+
+    (function (H) {
+        // Your Highcharts configuration code:
+        H.chart('chartContainer', {
+            chart: {
+                type: 'column',
+                backgroundColor: '#F0F0F0',
+                responsive: {
+                    rules: [{
+                        condition: {
+                            maxWidth: 500
+                        },
+                        chartOptions: {
+                            legend: {
+                                enabled: false
+                            }
+                        }
+                    }]
+                }
+            },
+            title: {
+                text: 'Semester Wise SGPA',
+                style: {
+                    color: '#333333',
+                    fontWeight: 'bold'
+                }
+            },
+            xAxis: {
+                categories: ['Spring, 2022', 'Summer, 2022', 'Fall, 2022', 'Spring, 2023', 'Fall, 2023'],
+                labels: {
+                    style: {
+                        color: '#333333'
+                    }
+                }
+            },
+            yAxis: {
+                title: {
+                    text: 'SGPA',
+                    style: {
+                        color: '#333333'
+                    }
+                },
+                labels: {
+                    style: {
+                        color: '#333333'
+                    }
+                }
+            },
+            legend: {
+                enabled: true,
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                itemStyle: {
+                    color: '#333333',
+                    fontWeight: 'normal'
+                }
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'SGPA',
+                data: [2.68, 2.50, null, null, null],
+                color: '#6C5BB6' // Light purple color
+            }]
+        });
+    })(Highcharts);
+    </script>
 </body>
+
 </html>
