@@ -9,8 +9,8 @@
         rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-
-    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="images/fav.jpeg">
+    <title>Dashboard</title>
 
 </head>
 
@@ -49,7 +49,8 @@ Change class "fixed" to "sticky" in "navbar" (l. 33) so the navbar doesn't hide 
     </style>
 
     <!-- Navbar start -->
-    <nav id="navbar" class="fixed top-0 z-40 flex w-full flex-row justify-end bg-cyan-500 bg-gradient-to-r from-emerald-800 to-blue-500 px-4 sm:justify-between">
+    <nav id="navbar"
+        class="fixed top-0 z-40 flex w-full flex-row justify-end bg-cyan-500 bg-gradient-to-r from-emerald-800 to-blue-500 px-4 sm:justify-between">
         <button id="btnSidebarToggler" type="button" class="py-4 text-2xl text-white hover:text-gray-200">
             <svg id="navClosed" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="h-8 w-8">
@@ -67,17 +68,17 @@ Change class "fixed" to "sticky" in "navbar" (l. 33) so the navbar doesn't hide 
 
     </nav>
     <!-- Navbar end -->
-     
+
     <!-- Sidebar start-->
     <div id="containerSidebar" class="z-40">
         <div class="navbar-menu relative z-40">
             <nav id="sidebar"
-                class="fixed left-0 bottom-0 flex w-3/4 -translate-x-full flex-col overflow-y-auto bg-gray-700 pt-6 pb-8 sm:max-w-xs lg:w-80">
+                class="fixed left-0 bottom-0 flex w-3/4 -translate-x-full flex-col overflow-y-auto bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% ...pt-6 pb-8 sm:max-w-xs lg:w-80">
                 <!-- one category / navigation group -->
                 <div class="px-4 pb-6">
                     <ul class="mb-8 text-sm font-medium">
                         <li>
-                            <a class="active flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
                                 href="Dashboard.html">
                                 <span class="select-none">Dashboard</span>
                             </a>
@@ -89,7 +90,8 @@ Change class "fixed" to "sticky" in "navbar" (l. 33) so the navbar doesn't hide 
                             </a>
                         </li>
                         <li>
-                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600" href="4o4.html">
+                            <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
+                                href="4o4.html">
                                 <span class="select-none">Profile Update</span>
                             </a>
                         </li>
@@ -195,11 +197,11 @@ Change class "fixed" to "sticky" in "navbar" (l. 33) so the navbar doesn't hide 
         <div class="mx-auto lg:ml-80"></div>
     </div>
     <!-- Sidebar end -->
-    
+
     <main>
-      <div class="bg-emerald-200 shadow-2xl">
-        <h1 class="text-2xl py-3 text-black font-bold mt-20 text-center">Student Dashboard</h1>
-      </div>
+        <div class="bg-emerald-200 shadow-2xl">
+            <h1 class="text-2xl py-3 text-black font-bold mt-20 text-center">Student Dashboard</h1>
+        </div>
         <div class="container mx-auto p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <div class="bg-blue-500 rounded-lg h-36 shadow-md p-4 flex flex-col justify-between">
                 <div class="text-xl text-white font-bold">Total Payable</div>

@@ -159,23 +159,23 @@ function populateResultSection(courses) {
     tableRow.classList.add('border-b', 'border-gray-200');
 
     const courseCodeCell = document.createElement('td');
-    courseCodeCell.classList.add('px-4', 'py-4', 'text-left', 'text-sm');
+    courseCodeCell.classList.add('px-4', 'py-4', 'text-left', 'bg-cyan-200', 'text-sm');
     courseCodeCell.textContent = course.courseCode;
 
     const courseTitleCell = document.createElement('td');
-    courseTitleCell.classList.add('px-4', 'py-4', 'text-left', 'text-sm');
+    courseTitleCell.classList.add('px-4', 'py-4', 'bg-blue-200', 'text-left', 'text-sm');
     courseTitleCell.textContent = course.courseTitle;
 
     const creditCell = document.createElement('td');
-    creditCell.classList.add('px-4', 'py-4', 'text-center', 'text-sm');
+    creditCell.classList.add('px-4', 'py-4', 'bg-green-200', 'text-center', 'text-sm');
     creditCell.textContent = course.credit;
 
     const gradeCell = document.createElement('td');
-    gradeCell.classList.add('px-4', 'py-4', 'text-center', 'text-sm');
+    gradeCell.classList.add('px-4', 'py-4', 'bg-sky-300', 'text-center', 'text-sm');
     gradeCell.textContent = course.grade;
 
     const gradePointCell = document.createElement('td');
-    gradePointCell.classList.add('px-4', 'py-4', 'text-center', 'text-sm');
+    gradePointCell.classList.add('px-4', 'py-4', 'bg-cyan-600', 'text-center', 'text-sm');
     gradePointCell.textContent = course.gradePoint;
 
     tableRow.appendChild(courseCodeCell);
@@ -190,7 +190,7 @@ function populateResultSection(courses) {
   // Calculate and display additional statistics (optional)
   const totalCredits = courses.reduce((acc, course) => acc + course.credit, 0);
   const sgpa = calculateSGPA(courses); // Implement function to calculate SGPA based on grades and credits
-  const statsElement = resultSection.querySelector('.text-sm.text-gray-500');
+  const statsElement = resultSection.querySelector('.text-md.text-red-500.space-x-4');
   statsElement.textContent = `Total Credit Requirement: 0 Total Credits Taken: ${totalCredits} SGPA: ${sgpa.toFixed(2)}`;
   
 }
